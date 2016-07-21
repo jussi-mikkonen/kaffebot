@@ -8,7 +8,7 @@
     
 #### Developing
 Install Go (https://golang.org). Clone the repository and set GOPATH env variable to the root of the repo.
-
+`go install kaffebot` at the root builds the project and places the binary to bin/ folder.
     
 #### Deploying new version
 Get the ip address from the bot (or nmap if it is down).
