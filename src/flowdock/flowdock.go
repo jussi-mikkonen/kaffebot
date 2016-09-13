@@ -7,6 +7,7 @@ import (
 	"bufio"
 	"bytes"
 	"io/ioutil"
+	"time"
 )
 
 type Flowdock struct {
@@ -75,7 +76,9 @@ func (flow *Flowdock) readerRoutine() {
 		data, readErr := reader.ReadBytes('\n')
 
 		if readErr != nil {
+			flow.logger.Println(readErr)
 			flow.logger.Println("Read error from HTTP stream, breaking out of loop, stopping this bot.")
+			time.Sleep(5 * time.Second)
 			break
 		}
 
